@@ -13,7 +13,7 @@ dependencies = [
     "psycopg2-binary>=2.9.13",
     "pydantic>=2.13.5",
     "pydantic-settings>=2.15.0",
-    "unstructured>=0.27.16",
+    "unstructured[docx,pdf,pptx]>=0.27.16",
 ]
 
 [project.scripts]

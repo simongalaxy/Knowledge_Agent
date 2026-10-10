@@ -11,12 +11,9 @@ class Settings(BaseSettings):
     log_path: str
     log_level: str
 
-    # summary report settings.
-    summary_report_path: str
+    # knowledge folder path.
+    knowledge_folder: str
 
-    # searching results settings.
-    searching_results_path: str
-        
     # neon connection string.
     neon_connection_str: str
     pgdatabase: str
@@ -26,6 +23,12 @@ class Settings(BaseSettings):
     ollama_base_url: str
     ollama_cloud_model: str
 
+    # ollama local llm settings.
+    ollama_local_model: str     
+
+    # ollama embedding model settings.
+    ollama_embedding_model: str
+
     # pydantic settings config.
     model_config = SettingsConfigDict(
         env_file=".env", 
@@ -33,8 +36,6 @@ class Settings(BaseSettings):
         extra="ignore"
     )
     
-    # batch size for processing job ads in batches.
-    batch_size: int
 
 # Singleton instance of the settings.
 settings = Settings() # type: ignore

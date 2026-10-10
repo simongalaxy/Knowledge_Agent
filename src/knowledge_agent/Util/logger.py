@@ -2,7 +2,7 @@ import logging
 import os
 from datetime import datetime
 
-from src.Util.Settings import settings
+from src.knowledge_agent.Util.Settings import settings
 
 
 class Logger:
