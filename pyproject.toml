@@ -8,13 +8,12 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "docling[all-doc]>=2.137.0",
     "dotenv>=0.9.9",
-    "ipykernel>=7.4.0",
     "ollama>=0.6.3",
     "psycopg2-binary>=2.9.13",
     "pydantic>=2.13.5",
     "pydantic-settings>=2.15.0",
-    "unstructured[docx,pdf,pptx]>=0.27.16",
 ]
 
 [project.scripts]

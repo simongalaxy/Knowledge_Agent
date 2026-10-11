@@ -1,15 +1,11 @@
 import os
 from pprint import pformat
-from unstructured.partition.auto import partition
-from unstructured.chunking.title import chunk_by_title
-from unstructured.documents.elements import Element
-from unstructured.staging.base import convert_to_dict
 
-help("unstructured.chunking")  # This will display the help information for the unstructured library.
+
+from docling.document_converter import DocumentConverter
 
 from src.knowledge_agent.Util.logger import Logger
 from src.knowledge_agent.Util.Settings import settings
-
 
 class DocumentLoader:
     def __init__(self, logger: Logger):
@@ -18,47 +14,69 @@ class DocumentLoader:
 
         # knowledge folder path from settings.
         self.knowledge_folder = settings.knowledge_folder
+        self.temp_folder = settings.temp_folder
+        
+        self.document_converter = DocumentConverter()
 
 
-    def get_documents_path(self) -> list[str]:
-        """
-        Get the list of document paths in the knowledge folder.
+    def get_files_path(self) -> list[str]:
+            """
+            Get the list of document paths in the knowledge folder.
+    
+            Returns:
+                list[str]: List of document paths.
+            """
+            try:
+                # Get the list of document paths in the knowledge folder.
+                files_path = [
+                    os.path.join(self.knowledge_folder, file_name)
+                    for file_name in os.listdir(self.knowledge_folder)
+                    if os.path.isfile(os.path.join(self.knowledge_folder, file_name))
+                ]
+                self.logger.info(f"Files found in {self.knowledge_folder}: {files_path}")
+                self.logger.info("*"*10 + " End of files list " + "*"*10)
+                return files_path
+            except Exception as e:
+                self.logger.error(f"Error getting files path: {e}")
+                return []
 
-        Returns:
-            list[str]: List of document paths.
-        """
+
+    def load_file_to_document(self, file_path: str):
         try:
-            # Get the list of document paths in the knowledge folder.
-            documents_path = [
-                os.path.join(self.knowledge_folder, file_name)
-                for file_name in os.listdir(self.knowledge_folder)
-                if os.path.isfile(os.path.join(self.knowledge_folder, file_name))
-            ]
-            self.logger.info(f"Documents found in {self.knowledge_folder}: {documents_path}")
-            self.logger.info("*"*10 + " End of documents list " + "*"*10)
-            return documents_path
-        except Exception as e:
-            self.logger.error(f"Error getting documents path: {e}")
-            return []
+            # Convert the document to text using DocumentConverter
+            result = self.document_converter.convert(file_path)
+          
+            self.save_markdown_to_file(
+                markdown_text=result.document.export_to_markdown(), 
+                output_path=os.path.join(self.temp_folder, f"{result.document.origin.filename.replace(".", "_")}.md")
+                )
+            self.save_result_to_json(
+                result=result, 
+                output_path=os.path.join(self.temp_folder, f"{result.document.origin.filename.replace(".", "_")}.json")
+            )
 
-
-    def load_document_to_partition(self, document_path: str) -> list[Element]:
-        try:
-            return partition(filename=document_path)
+            self.logger.info(f"Document {file_path} loaded successfully.")
+            self.logger.info(f"Document content: /n%s", result.document.export_to_markdown())
+            self.logger.info("*"*10 + " End of document content " + "*"*10)
+            return result.document
         except Exception as e:
             self.logger.error(f"Error loading document: {e}")
-            return []
+            return None
 
 
-    def chunk_partition_by_titles(self, document_elements: list[Element]) -> list[Element]:
+    def save_markdown_to_file(self, markdown_text: str, output_path: str):
         try:
-            return chunk_by_title(document_elements)
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(markdown_text)
+            self.logger.info(f"Markdown content saved to {output_path}.")
         except Exception as e:
-            self.logger.error(f"Error chunking document: {e}")
-            return []
+            self.logger.error(f"Error saving markdown to file: {e}")
 
 
-    def display_chunks_content(self, chunks: list[Element]) -> None:
-       self.logger.info(f"Document content: {pformat(convert_to_dict(chunks))}")
-
-       return
+    def save_result_to_json(self, result, output_path: str):
+        try:
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(result.model_dump_json(indent=4))
+            self.logger.info(f"Result saved to {output_path}.")
+        except Exception as e:
+            self.logger.error(f"Error saving result to JSON file: {e}")

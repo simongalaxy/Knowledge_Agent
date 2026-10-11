@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     # knowledge folder path.
     knowledge_folder: str
 
+    # temp folder path.
+    temp_folder: str
+
     # neon connection string.
     neon_connection_str: str
     pgdatabase: str
