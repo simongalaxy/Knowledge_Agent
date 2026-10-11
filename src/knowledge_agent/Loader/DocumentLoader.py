@@ -1,8 +1,11 @@
 import os
 from pprint import pformat
 from unstructured.partition.auto import partition
+from unstructured.chunking.title import chunk_by_title
 from unstructured.documents.elements import Element
+from unstructured.staging.base import convert_to_dict
 
+help("unstructured.chunking")  # This will display the help information for the unstructured library.
 
 from src.knowledge_agent.Util.logger import Logger
 from src.knowledge_agent.Util.Settings import settings
@@ -39,7 +42,7 @@ class DocumentLoader:
             return []
 
 
-    def load_document(self, document_path: str) -> list[Element]:
+    def load_document_to_partition(self, document_path: str) -> list[Element]:
         try:
             return partition(filename=document_path)
         except Exception as e:
@@ -47,21 +50,15 @@ class DocumentLoader:
             return []
 
 
-    def display_document_content(self, document_elements: list[Element]) -> None:
-        """
-        Display the content of the document elements.
-
-        Args:
-            document_elements (list[Element]): List of document elements.
-        """
+    def chunk_partition_by_titles(self, document_elements: list[Element]) -> list[Element]:
         try:
-            for i, element in enumerate(document_elements):
-                self.logger.info(f"Element No. {i}/{len(document_elements)}: {element.text}")
-                self.logger.info(f"Metadata: {pformat(element.metadata.to_dict(), indent=4)}")
-                self.logger.info("#"*10 + " End of element " + "*"*10)
-            self.logger.info("*"*10 + " End of document content " + "*"*10)
-
+            return chunk_by_title(document_elements)
         except Exception as e:
-            self.logger.error(f"Error displaying document content: {e}")
+            self.logger.error(f"Error chunking document: {e}")
+            return []
 
-        return
+
+    def display_chunks_content(self, chunks: list[Element]) -> None:
+       self.logger.info(f"Document content: {pformat(convert_to_dict(chunks))}")
+
+       return

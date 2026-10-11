@@ -1,3 +1,5 @@
+from torch import chunk
+
 from src.knowledge_agent.Util.logger import Logger
 from src.knowledge_agent.Loader.DocumentLoader import DocumentLoader
 
@@ -13,8 +15,9 @@ def main():
 
     # Load and display the content of each document.
     for document_path in documents_path:
-        document_elements = document_loader.load_document(document_path)
-        document_loader.display_document_content(document_elements)
+        document_elements = document_loader.load_document_to_partition(document_path)
+        chunked_documents = document_loader.chunk_partition_by_titles(document_elements=document_elements)
+        document_loader.display_chunks_content(chunks=chunked_documents)
 
 
     return
