@@ -42,6 +42,24 @@ class DocumentLoader:
                 self.logger.error(f"Error getting files path: {e}")
                 return []
 
+    def save_markdown_to_file(self, markdown_text: str, output_path: str) -> None:
+        try:
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(markdown_text)
+            self.logger.info(f"Markdown content saved to {output_path}.")
+        except Exception as e:
+            self.logger.error(f"Error saving markdown to file: {e}")
+        return
+    
+    def save_result_to_json(self, result, output_path: str) -> None:
+        try:
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(result.model_dump_json(indent=4))
+            self.logger.info(f"Result saved to {output_path}.")
+        except Exception as e:
+            self.logger.error(f"Error saving result to JSON file: {e}")
+        return
+
 
     def load_file_to_document(self, file_path: str) -> DoclingDocument | None:
         try:
@@ -66,20 +84,4 @@ class DocumentLoader:
             return None
 
 
-    def save_markdown_to_file(self, markdown_text: str, output_path: str) -> None:
-        try:
-            with open(output_path, "w", encoding="utf-8") as f:
-                f.write(markdown_text)
-            self.logger.info(f"Markdown content saved to {output_path}.")
-        except Exception as e:
-            self.logger.error(f"Error saving markdown to file: {e}")
-        return
-
-    def save_result_to_json(self, result, output_path: str) -> None:
-        try:
-            with open(output_path, "w", encoding="utf-8") as f:
-                f.write(result.model_dump_json(indent=4))
-            self.logger.info(f"Result saved to {output_path}.")
-        except Exception as e:
-            self.logger.error(f"Error saving result to JSON file: {e}")
-        return
+   

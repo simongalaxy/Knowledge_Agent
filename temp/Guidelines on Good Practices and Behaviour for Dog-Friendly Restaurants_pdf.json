@@ -51057,7 +51057,7 @@
         "parse_score": 1.0,
         "layout_score": 0.8977137002173682,
         "table_score": null,
-        "ocr_score": 0.9850311764705881,
+        "ocr_score": 0.9850311764705882,
         "pages": {
             "1": {
                 "parse_score": 1.0,
@@ -51159,16 +51159,6 @@
                 "mean_score": 0.971022218465805,
                 "low_score": 0.9449422150850296
             },
-            "11": {
-                "parse_score": 1.0,
-                "layout_score": 0.9066923430987767,
-                "table_score": null,
-                "ocr_score": null,
-                "mean_grade": "excellent",
-                "low_grade": "excellent",
-                "mean_score": 0.9533461715493883,
-                "low_score": 0.9113577259438378
-            },
             "12": {
                 "parse_score": 1.0,
                 "layout_score": 0.9154497053888109,
@@ -51178,6 +51168,16 @@
                 "low_grade": "excellent",
                 "mean_score": 0.9577248526944054,
                 "low_score": 0.9196772201193704
+            },
+            "11": {
+                "parse_score": 1.0,
+                "layout_score": 0.9066923430987767,
+                "table_score": null,
+                "ocr_score": null,
+                "mean_grade": "excellent",
+                "low_grade": "excellent",
+                "mean_score": 0.9533461715493883,
+                "low_score": 0.9113577259438378
             },
             "16": {
                 "parse_score": 1.0,
@@ -51189,15 +51189,15 @@
                 "mean_score": 0.9181820154190063,
                 "low_score": 0.8445458292961121
             },
-            "15": {
+            "14": {
                 "parse_score": 1.0,
-                "layout_score": 0.8878239943430974,
+                "layout_score": 0.9061822772026062,
                 "table_score": null,
                 "ocr_score": null,
                 "mean_grade": "excellent",
-                "low_grade": "good",
-                "mean_score": 0.9439119971715487,
-                "low_score": 0.8934327946259426
+                "low_grade": "excellent",
+                "mean_score": 0.9530911386013031,
+                "low_score": 0.9108731633424759
             },
             "13": {
                 "parse_score": 1.0,
@@ -51209,15 +51209,15 @@
                 "mean_score": 0.9635540800435203,
                 "low_score": 0.9307527520826884
             },
-            "14": {
+            "15": {
                 "parse_score": 1.0,
-                "layout_score": 0.9061822772026062,
+                "layout_score": 0.8878239943430974,
                 "table_score": null,
                 "ocr_score": null,
                 "mean_grade": "excellent",
-                "low_grade": "excellent",
-                "mean_score": 0.9530911386013031,
-                "low_score": 0.9108731633424759
+                "low_grade": "good",
+                "mean_score": 0.9439119971715487,
+                "low_score": 0.8934327946259426
             },
             "17": {
                 "parse_score": 1.0,
@@ -51229,16 +51229,6 @@
                 "mean_score": 0.8724050377681521,
                 "low_score": 0.6710082686406771
             },
-            "19": {
-                "parse_score": 1.0,
-                "layout_score": 0.8564042128049411,
-                "table_score": null,
-                "ocr_score": 0.9922735294117646,
-                "mean_grade": "excellent",
-                "low_grade": "good",
-                "mean_score": 0.9495592474055686,
-                "low_score": 0.8699911444656234
-            },
             "18": {
                 "parse_score": 1.0,
                 "layout_score": 0.8867420279576229,
@@ -51248,6 +51238,16 @@
                 "low_grade": "good",
                 "mean_score": 0.956318453763652,
                 "low_score": 0.896289158495194
+            },
+            "19": {
+                "parse_score": 1.0,
+                "layout_score": 0.8564042128049411,
+                "table_score": null,
+                "ocr_score": 0.9922735294117646,
+                "mean_grade": "excellent",
+                "low_grade": "good",
+                "mean_score": 0.9495592474055686,
+                "low_score": 0.8699911444656234
             }
         },
         "mean_grade": "excellent",
