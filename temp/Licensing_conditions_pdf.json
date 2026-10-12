@@ -7,7 +7,7 @@
         "docling_parse_version": "7.22.2",
         "platform_str": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
         "py_impl_version": "cpython-313",
-        "py_lang_version": "3.13.8"
+        "py_lang_version": "3.13.13"
     },
     "timestamp": null,
     "status": "success",
@@ -72,7 +72,7 @@
                                 "b": 75.91400810690914,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.6609146595001221,
+                            "confidence": 0.6609147191047668,
                             "cells": [
                                 {
                                     "index": 1,
@@ -897,7 +897,7 @@
                                 "b": 650.8340231069091,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.9717641472816467,
+                            "confidence": 0.9717640280723572,
                             "cells": [
                                 {
                                     "index": 28,
@@ -962,7 +962,7 @@
                                 "b": 726.5539938569091,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.9864662289619446,
+                            "confidence": 0.9864663481712341,
                             "cells": [
                                 {
                                     "index": 30,
@@ -1139,7 +1139,7 @@
                                 "b": 75.91400810690914,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.6609146595001221,
+                            "confidence": 0.6609147191047668,
                             "cells": [
                                 {
                                     "index": 1,
@@ -2034,7 +2034,7 @@
                                 "b": 650.8340231069091,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.9717641472816467,
+                            "confidence": 0.9717640280723572,
                             "cells": [
                                 {
                                     "index": 28,
@@ -2106,7 +2106,7 @@
                                 "b": 726.5539938569091,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.9864662289619446,
+                            "confidence": 0.9864663481712341,
                             "cells": [
                                 {
                                     "index": 30,
@@ -2277,7 +2277,7 @@
                                 "b": 75.91400810690914,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.6609146595001221,
+                            "confidence": 0.6609147191047668,
                             "cells": [
                                 {
                                     "index": 1,
@@ -3172,7 +3172,7 @@
                                 "b": 650.8340231069091,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.9717641472816467,
+                            "confidence": 0.9717640280723572,
                             "cells": [
                                 {
                                     "index": 28,
@@ -3244,7 +3244,7 @@
                                 "b": 726.5539938569091,
                                 "coord_origin": "TOPLEFT"
                             },
-                            "confidence": 0.9864662289619446,
+                            "confidence": 0.9864663481712341,
                             "cells": [
                                 {
                                     "index": 30,
@@ -3361,25 +3361,25 @@
     "timings": {},
     "confidence": {
         "parse_score": 1.0,
-        "layout_score": 0.93196223790829,
+        "layout_score": 0.9319622424932626,
         "table_score": null,
         "ocr_score": null,
         "pages": {
             "1": {
                 "parse_score": 1.0,
-                "layout_score": 0.93196223790829,
+                "layout_score": 0.9319622424932626,
                 "table_score": null,
                 "ocr_score": null,
                 "mean_grade": "excellent",
                 "low_grade": "excellent",
-                "mean_score": 0.965981118954145,
-                "low_score": 0.9353641260128756
+                "mean_score": 0.9659811212466314,
+                "low_score": 0.9353641303685996
             }
         },
         "mean_grade": "excellent",
         "low_grade": "excellent",
-        "mean_score": 0.965981118954145,
-        "low_score": 0.9353641260128756
+        "mean_score": 0.9659811212466314,
+        "low_score": 0.9353641303685996
     },
     "document": {
         "schema_name": "DoclingDocument",
@@ -3977,7 +3977,7 @@
                         "b": 75.91400810690914,
                         "coord_origin": "TOPLEFT"
                     },
-                    "confidence": 0.6609146595001221,
+                    "confidence": 0.6609147191047668,
                     "cells": [
                         {
                             "index": 1,
@@ -4872,7 +4872,7 @@
                         "b": 650.8340231069091,
                         "coord_origin": "TOPLEFT"
                     },
-                    "confidence": 0.9717641472816467,
+                    "confidence": 0.9717640280723572,
                     "cells": [
                         {
                             "index": 28,
@@ -4944,7 +4944,7 @@
                         "b": 726.5539938569091,
                         "coord_origin": "TOPLEFT"
                     },
-                    "confidence": 0.9864662289619446,
+                    "confidence": 0.9864663481712341,
                     "cells": [
                         {
                             "index": 30,
@@ -5115,7 +5115,7 @@
                         "b": 75.91400810690914,
                         "coord_origin": "TOPLEFT"
                     },
-                    "confidence": 0.6609146595001221,
+                    "confidence": 0.6609147191047668,
                     "cells": [
                         {
                             "index": 1,
@@ -6010,7 +6010,7 @@
                         "b": 650.8340231069091,
                         "coord_origin": "TOPLEFT"
                     },
-                    "confidence": 0.9717641472816467,
+                    "confidence": 0.9717640280723572,
                     "cells": [
                         {
                             "index": 28,
@@ -6082,7 +6082,7 @@
                         "b": 726.5539938569091,
                         "coord_origin": "TOPLEFT"
                     },
-                    "confidence": 0.9864662289619446,
+                    "confidence": 0.9864663481712341,
                     "cells": [
                         {
                             "index": 30,

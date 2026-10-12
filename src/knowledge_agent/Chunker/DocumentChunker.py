@@ -1,12 +1,13 @@
 from docling.chunking import HybridChunker
-
+from docling.datamodel.document import DoclingDocument
+from typing import List
 
 from src.knowledge_agent.Util.logger import Logger
 from src.knowledge_agent.Util.Settings import settings
 
 
 class DocumentChunker:
-    def __init__(self, logger):
+    def __init__(self, logger: Logger):
         # initialize the logger and the HybridChunker instance.
         self.logger = logger
         self.chunker = HybridChunker()
@@ -18,19 +19,20 @@ class DocumentChunker:
         Args:
             chunks (list): A list of chunked document elements.
         """
+        self.logger.info("*" * 10 + " Start of chunked document content " + "*" * 10)
         for i, chunk in enumerate(chunks):
-            self.logger.info(f"Chunk {i + 1}: {chunk.content}")
+            self.logger.info(f"Chunk {i + 1}: {chunk.text}")
             self.logger.info("*" * 10 + " End of chunk content " + "*" * 10)
 
         return
 
 
-    def chunk_document(self, document):
+    def chunk_document(self, document: DoclingDocument) -> List[DoclingDocument]:
         """
         Chunk the document elements using the HybridChunker.
 
         Args:
-            document_elements (list): A list of document elements to be chunked.
+            document (Document): The document to be chunked.
 
         Returns:
             list: A list of chunked document elements.
